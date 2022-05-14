@@ -1,5 +1,11 @@
 const express = require('express');
 const app = express();
+const helmet = require('helmet');
+const cors = require('cors');
+
+
+app.use(helmet());
+app.use(cors());
 
 //body.parser
 app.use(express.urlencoded({ extended: true }));
