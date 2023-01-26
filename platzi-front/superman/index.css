@@ -1,0 +1,125 @@
+:root{
+    --yellow: #ffcf00;
+    --red: #d5040a;
+    --blue: #036cb6;
+}
+
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+.page{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.container{
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas: 
+    "nav aside"
+    "section aside"
+    "footer aside";
+    height: 100%;
+    width: 100%;
+}
+.navbar{
+    background: rgb(229, 71, 163);
+    grid-area: nav;
+}
+.navbar_content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0 80px;
+}
+.navbar_content img{
+    width: 50px;
+}
+.navbar_content ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none; 
+    padding: 0;
+    width: 450px; 
+    animation: 2s navbar 0.5s ease-in-out;   
+}
+@keyframes navbar{
+    0%{
+        transform: translateY(-200px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+.navbar_content ul li a{
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 100;
+}
+.loader{
+    background: rgba(220, 93, 201, 0.49);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 3;
+
+    animation: loader 2s linear forwards;
+}
+
+@keyframes loader {
+    0%{
+        opacity: 1;
+        visibility: visible;
+        
+    }
+    95%{
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.loader div{
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    transform: scale(0);
+
+    animation: scaling 2s ease-in-out infinite;
+}
+.loader div:nth-child(1){
+    animation-delay: 0.2s;
+}
+.loader div:nth-child(2){
+    animation-delay: 0.4s;
+}
+.loader div:nth-child(3){
+    animation-delay: 0.6s;
+}
+
+@keyframes scaling{
+    0%, 100% {
+        transform: scale(0.2);
+    }
+    40%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1);
+    }
+
+}
