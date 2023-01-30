@@ -29,8 +29,9 @@ body{
     width: 100%;
 }
 .navbar{
-    background: rgb(229, 71, 163);
+    
     grid-area: nav;
+    display: flex;
 }
 .navbar_content{
     display: flex;
@@ -61,10 +62,44 @@ body{
 .navbar_content ul li a{
     text-decoration: none;
     color: var(--red);
+    font-weight: 300;
+}
+.main_content{
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding-left: 80px;
+    animation: 2s navbar 0.5s ease-in-out;   
+}
+.main_content p:first-child{
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0 0 -14px 44px;
+
+}
+.main_content h1{
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 28px 0;
+}
+.main_content p:last-child{
     font-weight: 100;
+    margin: 0;
+    width: 90%;
+}
+
+@keyframes main_content{
+    0%{
+        transform: translateY(-1000px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+
 }
 .loader{
-    background: rgba(220, 93, 201, 0.49);
+    background: var(--red);
     width: 100%;
     height: 100%;
     display: flex;
